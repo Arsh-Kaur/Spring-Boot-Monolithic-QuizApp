@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "af8b41b3-9cf2-481d-92a5-db91ff45ee72",
+		"name": "quizApp Monolithic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29365249"
+	},
+	"item": [
+		{
+			"name": "add question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"questionTitle\": \"Again16\",\r\n    \"option1\": \"What is the square root of 64?\",\r\n    \"option2\": \"4\",\r\n    \"option3\": \"8\",\r\n    \"option4\": \"12\",\r\n    \"rightAnswer\": \"8\",\r\n    \"difficultyLevel\": \"Easy\",\r\n    \"category\": \"Math\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/question/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createQuiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quiz/create?category=Math&numQ=2&title=Mquiz2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz",
+						"create"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Math"
+						},
+						{
+							"key": "numQ",
+							"value": "2"
+						},
+						{
+							"key": "title",
+							"value": "Mquiz2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getQuiz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quiz/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/question/allQuestions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question",
+						"allQuestions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submitquiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"8\"\r\n    },\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"8\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quiz/submit/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quiz",
+						"submit",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
